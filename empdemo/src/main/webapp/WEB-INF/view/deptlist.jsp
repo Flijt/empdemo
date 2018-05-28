@@ -93,7 +93,6 @@
             //$(this)代表着获取当前触发这个方法的那个节点对象
             var id = $(this).attr("delete-id");
             var path = "${pageContext.request.contextPath}/dept/deleteDeptById?id=" + id;
-            alert("删除成功");
             location.href = path;
         });
         //全选的点击事件
@@ -107,12 +106,10 @@
             $(".item").each(function () {
                 var item = $(this);
                 if (item.prop("checked")){
-                    var id = item.val();
-                    ids[ids.length] = id;
+                    ids[ids.length] = item.val();
                 }
             });
             var path = "${pageContext.request.contextPath}/dept/deleteDeptById?id=" + ids;
-            alert("删除成功");
             location.href = path;
         });
     });

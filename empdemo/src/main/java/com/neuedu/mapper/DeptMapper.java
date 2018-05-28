@@ -17,6 +17,6 @@ public interface DeptMapper {
      * @param ids
      * @return 影响行数
      */
-    int deleteDeptByIds(int[] ids);
+    int deleteDeptById(int[] ids);
 
 }

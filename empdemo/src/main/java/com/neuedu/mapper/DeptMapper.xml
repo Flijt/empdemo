@@ -8,10 +8,10 @@
         select id ,dname,location from e_dept
     </select>
 
-    <delete id="deleteDeptByIds">
+    <delete id="deleteDeptById">
         delete from e_dept where id in
-        <foreach collection="array" open="(" close=")" separator="," item="item">
-            #{item}
+        <foreach collection="array" open="(" close=")" separator="," item="id">
+            #{id}
         </foreach>
     </delete>
 

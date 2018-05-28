@@ -35,9 +35,10 @@ public class DeptController {
     }
 
         @RequestMapping(value = {"/deleteDeptById"})
-        public String deleteDeptById(int[] id){
-            deptService.deleteDeptByIds(id);
-            return "redirect:/dept/deptlist";
+        public String deleteDeptById(int[] id,HttpSession httpSession){
+            deptService.deleteDeptById(id);
+            Integer pageNum = (Integer) httpSession.getAttribute("DeptPageNum");
+            return "redirect:/dept/deptlist?pageNum=" + pageNum;
         }
 
 
