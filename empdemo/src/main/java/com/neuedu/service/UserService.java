@@ -1,6 +1,7 @@
 package com.neuedu.service;
 
 import com.neuedu.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserService {
 
@@ -10,5 +11,12 @@ public interface UserService {
      * @return 用户对象
      */
     User getUserByUsername(String username);
+
+    /**
+     * 添加user的方法
+     * @param user
+     * @return 影响行数
+     */
+    int saveUser(User user);
 
 }
